@@ -31,11 +31,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Quicksand',
-    fontWeightLight: 200,
-    fontWeightRegular: 200,
-    fontWeightMedium: 700,
-    fontWeightBold: 1000,
     h1: {
       fontWeight: 800,
     },
