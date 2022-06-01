@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Grid from '@mui/material/Grid'
 // Import components
 import AppBar from './Components/AppBar'
+import WeatherCastPanel from './Components/WeatherCastPanel'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Grid>
           <Grid item container>
             {/* ------- Weather cast section  ------- */}
+            <WeatherCastPanel />
           </Grid>
         </Grid>
       </ThemeProvider>

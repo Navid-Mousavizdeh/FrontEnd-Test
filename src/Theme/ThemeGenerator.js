@@ -26,31 +26,11 @@ export const theme = createTheme({
       dark: '#f44336',
     },
     text: {
-      primary: '#242754',
+      primary: '#757575',
       secondary: '#0097a7',
     },
   },
-  typography: {
-    h1: {
-      fontWeight: 800,
-    },
-    h2: {
-      fontWeight: 900,
-    },
-    h3: {
-      fontWeight: 800,
-    },
-    h4: {
-      fontWeight: 800,
-    },
-    h5: {
-      fontWeight: 800,
-      fontSize: '1.6rem',
-    },
-    subtitle1: {
-      fontWeight: 700,
-    },
-  },
+
   spacing: 8,
   props: {
     MuiTooltip: {
