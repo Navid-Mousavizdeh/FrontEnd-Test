@@ -18,6 +18,7 @@ function WeekWeather(props) {
             sx={{
               flexDirection: 'column',
             }}
+            key={item.Day}
           >
             <Box>
               <Typography
