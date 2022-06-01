@@ -6,6 +6,15 @@ import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
 // Import components
 import TitleBar from './TitleBar'
+import DayWeather from './DayWeather'
+
+// Initialize Weather data
+var weatherData = {
+  Humidity: '89%',
+  Wind: '3.14 m/s 38°',
+  Cloudiness: '0%',
+  Pressure: '1006 hPa',
+}
 
 function WeatherCastPanel() {
   return (
@@ -27,7 +36,9 @@ function WeatherCastPanel() {
                 WeatherCast='Sky is clear.'
               />
             </Grid>
-            <Grid item></Grid>
+            <Grid item>
+              <DayWeather Temperature='21' Data={weatherData} />
+            </Grid>
           </Grid>
         </CardContent>
       </Card>
