@@ -7,6 +7,11 @@ import Grid from '@mui/material/Grid'
 // Import components
 import TitleBar from './TitleBar'
 import DayWeather from './DayWeather'
+import WeekWeather from './WeekWeather'
+// import icons
+import SunnyIcon from '../Assets/Sunny-Icon.png'
+import RainyIcon from '../Assets/Rainy-Icon.png'
+import CloudyIcon from '../Assets/Cloudy-Icon.png'
 
 // Initialize Weather data
 var weatherData = {
@@ -15,6 +20,51 @@ var weatherData = {
   Cloudiness: '0%',
   Pressure: '1006 hPa',
 }
+
+var weatherWeeklyData = [
+  {
+    Day: 'Wed',
+    Icon: CloudyIcon,
+    Max: '26',
+    Min: '21',
+  },
+  {
+    Day: 'Thu',
+    Icon: RainyIcon,
+    Max: '26',
+    Min: '22',
+  },
+  {
+    Day: 'Fri',
+    Icon: RainyIcon,
+    Max: '24',
+    Min: '19',
+  },
+  {
+    Day: 'Sat',
+    Icon: RainyIcon,
+    Max: '27',
+    Min: '19',
+  },
+  {
+    Day: 'Sun',
+    Icon: SunnyIcon,
+    Max: '27',
+    Min: '17',
+  },
+  {
+    Day: 'Mon',
+    Icon: RainyIcon,
+    Max: '28',
+    Min: '22',
+  },
+  {
+    Day: 'Tue',
+    Icon: RainyIcon,
+    Max: '24',
+    Min: '21',
+  },
+]
 
 function WeatherCastPanel() {
   return (
@@ -38,6 +88,9 @@ function WeatherCastPanel() {
             </Grid>
             <Grid item>
               <DayWeather Temperature='21' Data={weatherData} />
+            </Grid>
+            <Grid item container>
+              <WeekWeather Data={weatherWeeklyData} />
             </Grid>
           </Grid>
         </CardContent>
