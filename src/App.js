@@ -19,7 +19,7 @@ function App() {
       {/* Theme providing for whole page */}
       <ThemeProvider theme={theme}>
         {/* Grid every component of the page each will be placed in a item grid */}
-        <Grid container sx={{ p: 2 }}>
+        <Grid container sx={{ p: 1 }}>
           {/* ------- AppBar  ------- */}
           <Grid item container>
             <AppBar />
