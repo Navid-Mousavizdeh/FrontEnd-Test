@@ -19,6 +19,10 @@ const BoxCenter = styled(Box)(({ theme }) => ({
 const BoxFlexSpace = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
+  [theme.breakpoints.down('sm')]: {
+    justifyContent: 'center',
+  },
+  flexWrap: 'wrap',
 }))
 
 const TypographyFull = styled(Typography)(({ theme }) => ({

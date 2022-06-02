@@ -35,7 +35,7 @@ function WeatherCastPanel(props) {
                 WeatherCast={props.Data.WeatherCast}
               />
             </Grid>
-            <Grid item>
+            <Grid item container>
               <DayWeather
                 WeatherIcon={props.Data.TodayIcon}
                 Temperature={props.Data.Temperature}
