@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { styled } from '@mui/system'
 // import MUI components
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -8,67 +9,15 @@ import Grid from '@mui/material/Grid'
 import TitleBar from './TitleBar'
 import DayWeather from './DayWeather'
 import WeekWeather from './WeekWeather'
-// import icons
-import SunnyIcon from '../Assets/Sunny-Icon.png'
-import RainyIcon from '../Assets/Rainy-Icon.png'
-import CloudyIcon from '../Assets/Cloudy-Icon.png'
 
-// Initialize Weather data
-var weatherData = {
-  Humidity: '89%',
-  Wind: '3.14 m/s 38°',
-  Cloudiness: '0%',
-  Pressure: '1006 hPa',
-}
+const BoxMargin = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  marginTop: theme.spacing(2),
+}))
 
-var weatherWeeklyData = [
-  {
-    Day: 'Wed',
-    Icon: CloudyIcon,
-    Max: '26',
-    Min: '21',
-  },
-  {
-    Day: 'Thu',
-    Icon: RainyIcon,
-    Max: '26',
-    Min: '22',
-  },
-  {
-    Day: 'Fri',
-    Icon: RainyIcon,
-    Max: '24',
-    Min: '19',
-  },
-  {
-    Day: 'Sat',
-    Icon: RainyIcon,
-    Max: '27',
-    Min: '19',
-  },
-  {
-    Day: 'Sun',
-    Icon: SunnyIcon,
-    Max: '27',
-    Min: '17',
-  },
-  {
-    Day: 'Mon',
-    Icon: RainyIcon,
-    Max: '28',
-    Min: '22',
-  },
-  {
-    Day: 'Tue',
-    Icon: RainyIcon,
-    Max: '24',
-    Min: '21',
-  },
-]
-
-function WeatherCastPanel() {
+function WeatherCastPanel(props) {
   return (
-    <Box sx={{ flexGrow: 1, mt: 2 }}>
+    <BoxMargin>
       <Card>
         <CardContent>
           <Grid
@@ -79,23 +28,27 @@ function WeatherCastPanel() {
           >
             <Grid item>
               <TitleBar
-                CityName='Chicago'
-                CountryName='US'
-                Date='Tue Aug 15 2017'
-                Time='10:41:34 PM'
-                WeatherCast='Sky is clear.'
+                CityName={props.Data.CityName}
+                CountryName={props.Data.CountryName}
+                Date={props.Data.Date}
+                Time={props.Data.Time}
+                WeatherCast={props.Data.WeatherCast}
               />
             </Grid>
             <Grid item>
-              <DayWeather Temperature='21' Data={weatherData} />
+              <DayWeather
+                WeatherIcon={props.Data.TodayIcon}
+                Temperature={props.Data.Temperature}
+                Data={props.Data.weatherData}
+              />
             </Grid>
             <Grid item container>
-              <WeekWeather Data={weatherWeeklyData} />
+              <WeekWeather Data={props.Data.weatherWeeklyData} />
             </Grid>
           </Grid>
         </CardContent>
       </Card>
-    </Box>
+    </BoxMargin>
   )
 }
 

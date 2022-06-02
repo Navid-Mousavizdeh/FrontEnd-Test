@@ -1,40 +1,47 @@
 import * as React from 'react'
-// Import Theme
+// import Theme
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './Theme/ThemeGenerator'
+import { styled } from '@mui/system'
 // import MUI components
 import CssBaseline from '@mui/material/CssBaseline'
 import Grid from '@mui/material/Grid'
 import Fab from '@mui/material/Fab'
-// Import components
+// import components
 import AppBar from './Components/AppBar'
 import WeatherCastPanel from './Components/WeatherCastPanel'
-// Import Icons
+// import Icons
 import AddIcon from '@mui/icons-material/Add'
+// import Data
+import { allData } from './Data'
+
+const GridContainerPage = styled(Grid)(({ theme }) => ({
+  padding: theme.spacing(1),
+}))
+
+const GridContainerFloatingButton = styled(Grid)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+  justifyContent: 'flex-end',
+}))
 
 function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* Theme providing for whole page */}
       <ThemeProvider theme={theme}>
-        {/* Grid every component of the page each will be placed in a item grid */}
-        <Grid container sx={{ p: 1 }}>
-          {/* ------- AppBar  ------- */}
+        <GridContainerPage container>
           <Grid item container>
-            <AppBar />
+            <AppBar Title={allData.AppBarTitle} />
           </Grid>
           <Grid item container>
-            {/* ------- Weather cast section  ------- */}
-            <WeatherCastPanel />
+            <WeatherCastPanel Data={allData} />
           </Grid>
-          <Grid item container justifyContent='flex-end' sx={{ mt: 2 }}>
-            {/* ------- Weather cast section  ------- */}
-            <Fab color='primary' aria-label='add'>
+          <GridContainerFloatingButton item container>
+            <Fab color='primary'>
               <AddIcon />
             </Fab>
-          </Grid>
-        </Grid>
+          </GridContainerFloatingButton>
+        </GridContainerPage>
       </ThemeProvider>
     </React.Fragment>
   )

@@ -1,34 +1,36 @@
 import * as React from 'react'
+import { styled } from '@mui/system'
 // import MUI components
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-// import icons
-import SunnyIcon from '../Assets/Sunny-Icon.png'
+
+const BoxFlex = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'flex-start',
+}))
+
+const BoxMargin = styled(Box)(({ theme }) => ({
+  marginLeft: theme.spacing(1),
+  marginRight: theme.spacing(1),
+}))
 
 function DayWeather(props) {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'flex-start',
-      }}
-    >
-      <Box sx={{ mx: 0 }}>
-        {/* --------- Weather icon --------- */}
-        <img src={SunnyIcon} alt='Clear Icon' />
+    <BoxFlex>
+      <Box>
+        <img src={props.WeatherIcon} alt='Clear Icon' />
       </Box>
-      <Box sx={{ mx: 1 }}>
-        {/* --------- Temperature --------- */}
+      <BoxMargin>
         <Typography variant='h1'>{props.Temperature + '°'}</Typography>
-      </Box>
-      <Box sx={{ flexDirection: 'column', mx: 1 }}>
+      </BoxMargin>
+      <BoxMargin>
         {Object.entries(props.Data).map((item) => (
           <Typography variant='h5' key={item[0]}>
             {item[0] + ': ' + item[1]}
           </Typography>
         ))}
-      </Box>
-    </Box>
+      </BoxMargin>
+    </BoxFlex>
   )
 }
 
