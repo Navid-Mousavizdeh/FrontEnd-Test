@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 
 function TitleBar(props) {
   return (
-    <Box>
+    <Box data-testid='title-bar'>
       <Typography variant='h4'>
         {props.CityName + ', ' + props.CountryName}
       </Typography>

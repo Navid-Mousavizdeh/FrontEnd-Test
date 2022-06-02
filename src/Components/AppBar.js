@@ -10,7 +10,7 @@ const BoxContainer = styled(Box)(({ theme }) => ({ flexGrow: 1 }))
 
 function TopBar(props) {
   return (
-    <BoxContainer>
+    <BoxContainer data-testid='app-bar'>
       <AppBar position='static'>
         <Toolbar>
           <Typography variant='h6'>{props.Title}</Typography>

@@ -17,7 +17,7 @@ const BoxMargin = styled(Box)(({ theme }) => ({
 
 function WeatherCastPanel(props) {
   return (
-    <BoxMargin>
+    <BoxMargin data-testid='weather-cast-panel'>
       <Card>
         <CardContent>
           <Grid

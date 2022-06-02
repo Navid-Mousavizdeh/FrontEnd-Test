@@ -31,7 +31,7 @@ const BoxMargin = styled(Box)(({ theme }) => ({
 
 function DayWeather(props) {
   return (
-    <BoxFlex>
+    <BoxFlex data-testid='day-weather'>
       <CenterBox>
         <Box>
           <img src={props.WeatherIcon} alt='Clear Icon' />

@@ -32,7 +32,7 @@ const TypographyFull = styled(Typography)(({ theme }) => ({
 
 function WeekWeather(props) {
   return (
-    <BoxContainer>
+    <BoxContainer data-testid='week-weather'>
       <BoxFlexSpace>
         {props.Data.map((item) => (
           <Box key={item.Day}>
