@@ -3,8 +3,8 @@ import SunnyIcon from './Assets/Sunny-Icon.png'
 import RainyIcon from './Assets/Rainy-Icon.png'
 import CloudyIcon from './Assets/Cloudy-Icon.png'
 
-// Initialize Weather dat
-export const allData = {
+// Initialize Weather data for static UI
+export const sampleData = {
   AppBarTitle: 'Weather App',
   CityName: 'Chicago',
   CountryName: 'US',

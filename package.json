@@ -50,7 +50,8 @@
     "babel-jest": "^28.1.0",
     "gh-pages": "^4.0.0",
     "jest": "^28.1.0",
-    "jest-environment-jsdom": "^28.1.0"
+    "jest-environment-jsdom": "^28.1.0",
+    "jest-fetch-mock": "^3.0.3"
   },
   "description": "The main perpose of this small project was recreating the UI showen below with the latest React and MUI version and without reading the original code.",
   "main": "index.js",
@@ -62,7 +63,12 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    },
+    "automock": false,
+    "resetMocks": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   },
   "keywords": [],
   "author": "",
